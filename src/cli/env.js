@@ -1,14 +1,14 @@
 const parseEnv = () => {
-    const rssEnv = Object.entries(process.env)
-        .filter(([key]) => key.startsWith('RSS_'))
-        .map(([key, value]) => `${key}=${value}`)
-        .join('; ');
+  const rssEnv = Object.entries(process.env)
+    .filter(([key]) => key.startsWith("RSS_"))
+    .map(([key, value]) => `${key}=${value}`)
+    .join("; ");
 
-    if (rssEnv) {
-        console.log(rssEnv);
-    } else {
-        console.log('No RSS_ environment variables found.');
-    }
+  if (rssEnv) {
+    console.log(rssEnv);
+  } else {
+    console.log("No RSS_ environment variables found.");
+  }
 };
 
 // Set test variables

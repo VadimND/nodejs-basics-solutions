@@ -1,17 +1,17 @@
-import { createReadStream } from 'fs';
-import { createHash } from 'crypto';
-import { join } from 'path';
+import { createReadStream } from "fs";
+import { createHash } from "crypto";
+import { join } from "path";
 
 const calculateHash = async () => {
-    const filePath = join('src', 'hash', 'files', 'fileToCalculateHashFor.txt');
+  const filePath = join("src", "hash", "files", "fileToCalculateHashFor.txt");
 
-    const hash = createHash('sha256');
-    const stream = createReadStream(filePath);
+  const hash = createHash("sha256");
+  const stream = createReadStream(filePath);
 
-    stream.on('data', (chunk) => hash.update(chunk));
-    stream.on('end', () => {
-        console.log(hash.digest('hex'));
-    });
+  stream.on("data", (chunk) => hash.update(chunk));
+  stream.on("end", () => {
+    console.log(hash.digest("hex"));
+  });
 };
 
 await calculateHash();
